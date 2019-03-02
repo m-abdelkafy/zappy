@@ -3,7 +3,7 @@
         "config_id": "development",
         "app_name": "zappy",
         "node_port": 3000,
-        "database": "mongodb://127.0.0.1:27017/zappy",
+        "database": "mongodb://localhost:27017/zappy",
         "twitter_keys": {
             "consumerKey": "dPg4Hos0tInJ55etm6nTDsiCY",
             "consumerSecret": "eWzZIqZgqQoZE5kTtIKf3KyguuQvXMr3uKWPmpK2OLIqEiKOLv",
@@ -18,7 +18,7 @@
     "staging": {
         "config_id": "staging",
         "node_port": 8080,
-        "database": "my-app-db-stag"
+        "database": "mongodb://mongodb:27017/zappy"
     },
     "production": {
         "config_id": "production",
