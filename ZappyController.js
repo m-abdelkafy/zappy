@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         if (err) {
             return res.status(500).send('There was a problem finding tweets.');
         }
-        res.status(200).send(tweets);
+        res.status(200).send({tweets});
      });
 });
 router.post('/', (req, res) => {

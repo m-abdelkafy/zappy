@@ -1,0 +1,7 @@
+<ul class="tweets">
+    <h2>Tweets</h2>
+    <li *ngFor="let tweet of tweets">
+        <p>{{tweet.text}}</p>
+        <span>{{tweet.created_at}}</span>
+    </li>
+</ul>
