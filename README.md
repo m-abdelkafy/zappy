@@ -19,5 +19,5 @@ docker-compose up
 Navigate to angularApp/zappy-web directory
 Run the following command to start the app
 ```
-ng serve
+ng serve --open
 ```
