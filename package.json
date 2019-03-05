@@ -2,9 +2,10 @@
   "name": "zappy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -13,8 +14,12 @@
   "author": "Mohamed Abdelkafy",
   "license": "ISC",
   "dependencies": {
+    "@slack/client": "^4.10.0",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.16",
+    "twitter-node-client": "0.0.6"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

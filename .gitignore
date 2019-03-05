@@ -78,3 +78,12 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+#data files for mongodb
+data/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+

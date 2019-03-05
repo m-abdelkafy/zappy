@@ -1,0 +1,16 @@
+ul {
+  li {
+    list-style: none;
+    border: 3px solid cadetblue;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 0 0 8px 0;
+    padding: 0 5px 0 5px;
+    p {
+      margin: 8px 0 8px 0;
+      font-size: 2em;
+      font-weight: bold;
+    }
+  }
+}

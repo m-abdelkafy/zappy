@@ -1,0 +1,28 @@
+{
+    "development": {
+        "config_id": "development",
+        "app_name": "zappy",
+        "node_port": 3000,
+        "database": "mongodb://localhost:27017/zappy",
+        "twitter_keys": {
+            "consumerKey": "dPg4Hos0tInJ55etm6nTDsiCY",
+            "consumerSecret": "eWzZIqZgqQoZE5kTtIKf3KyguuQvXMr3uKWPmpK2OLIqEiKOLv",
+            "accessToken": "1101176926067191809-i4FylwObiPvYEFFyK7t05PrZgEHpgu",
+            "accessTokenSecret": "VrkPwb23nQBXZggDQcKS4NWxcmF0CfaKkhvi2hfqzgVXy"
+        }
+    },
+    "testing": {
+        "config_id": "testing",
+        "database": "my-app-db-test"
+    },
+    "staging": {
+        "config_id": "staging",
+        "node_port": 8080,
+        "database": "mongodb://mongodb:27017/zappy"
+    },
+    "production": {
+        "config_id": "production",
+        "node_port": 8080,
+        "database": "my-app-db-prod"
+    }
+}
