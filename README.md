@@ -11,7 +11,7 @@ Make sure that you have installed the following
 * Docker
 * Angular CLI
 
-###Running Zappy
+### Running Zappy
 Run the following command to run the API and db
 ```
 docker-compose up
