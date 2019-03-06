@@ -8,19 +8,22 @@ class ZappyDal {
         });
     }
     upsertTweets(tweets, callback) {
-
-        var upsertedTweets = [];
-        var errors = [];
+        let upsertedTweets = [];
+        let errors = [];
         tweets.forEach(tweet => {
 
             Tweet.findByIdAndUpdate(tweet._id, tweet, { upsert: true }, (err, result) => {
                 if (err) {
                     errors.push(err);
                 }
-                upsertedTweets.push(result);
+                if (!result) {
+                    upsertedTweets.push(tweet);
+                }
             });
         });
-        callback(errors, tweets);
+        if (typeof callback === "function") {
+            callback(errors, upsertedTweets);
+        }
     }
 }
 

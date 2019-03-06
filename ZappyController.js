@@ -17,11 +17,11 @@ router.get('/', (req, res) => {
     });
 });
 router.post('/', (req, res) => {
-    twitterService.getTweets(req.query.message, (err, tweets) => {
-        if (err) {
+    twitterService.getTweets(req.query.message, (errors, upsertedTweets) => {
+        if (errors.length > 0) {
             return res.status(500).send('There was a problem.');
         }
-        res.status(200).send({ tweets: tweets });
+        res.status(200).send({ tweets: upsertedTweets });
     });
 });
 

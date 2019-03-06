@@ -7,10 +7,13 @@ let twitterDal = new TwitterDal();
 class TwitterService {
     getTweets(message, callback) {
         if (this.containsGo(message)) {
-            console.debug('inside containsGo');
-            return twitterDal.getTweets(this.errorHandling, this.upsertTweets);
+            twitterDal.getTweets(this.errorHandling, (data) => {
+                return this.upsertTweets(data, callback);
+            });
+
+        } else {
+            callback(false, []);
         }
-        return callback(false, []);
     }
 
     containsGo(message) {
@@ -23,29 +26,15 @@ class TwitterService {
 
     upsertTweets(data, callback) {
         console.debug('start upsert');
-        let parsedData = JSON.parse(data);
-        let tweets = parsedData.map(element => {
-            return {
-                _id: element.id_str,
-                created_at: element.created_at,
-                id: element.id_str,
-                text: element.text,
-                truncated: element.truncated,
-                user: {
-                    id: element.user.id_str,
-                    name: element.user.name,
-                    screen_name: element.user.screen_name
-                }
-            };
-        });
-        // let tweets = this.mapResponseToTweet(data);
-        return zappyDal.upsertTweets(tweets, (err, tweets)=>{
-            return callback(err, tweets);
+        let tweets = this.mapResponseToTweet(data);
+        zappyDal.upsertTweets(tweets, (errors, upsertedTweets) => {
+            if (typeof callback === "function") {
+                callback(errors, upsertedTweets);
+            }
         });
     }
 
     mapResponseToTweet(data) {
-        console.debug(data);
         let parsedData = JSON.parse(data);
         return parsedData.map(element => {
             return {
