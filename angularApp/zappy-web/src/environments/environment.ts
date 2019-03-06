@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  zappyUrl: 'http://localhost:3000/zappy'
+  zappyUrl: 'http://localhost:8080/zappy'
 };
 
 /*
